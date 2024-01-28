@@ -1,2 +1,2 @@
-# CS 370 - Introduction to Artificial Intelligence
+# CS370 - Introduction to Artificial Intelligence
 Thai Thao Uyen Nguyen
