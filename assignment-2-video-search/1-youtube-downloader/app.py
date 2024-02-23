@@ -20,7 +20,7 @@ def download_video():
         print(yt_name)
 
         # download the video to a specified directory
-        stream.download(output_path="video-downloads",filename=yt_name)
+        stream.download(output_path="video-downloads",filename=yt_name+'.mp4')
         
         # update video download status
         vid_status.configure(text="Video Downloaded", text_color="green")
