@@ -44,8 +44,8 @@ def main():
     if not os.path.exists("DATASET-frames"):
         os.makedirs("DATASET-frames")
 
-    video_directory = "video-downloads"
-    output_root_dir = "DATASET-FRAMES"
+    video_directory = "1-youtube-downloader\\video-downloads"
+    output_root_dir = "1-youtube-downloader\\DATASET-FRAMES"
 
     process_all_videos(video_directory, output_root_dir)
 
