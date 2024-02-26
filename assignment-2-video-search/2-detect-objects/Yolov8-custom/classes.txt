@@ -1,0 +1,7 @@
+bridge
+ocean
+mountain
+tree
+road
+buildings
+water
