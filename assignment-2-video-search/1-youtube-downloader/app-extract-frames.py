@@ -28,7 +28,7 @@ def extract_frame(video_file, output_directory, video_id):
     video.release() 
     cv2.destroyAllWindows()
 
-def create_timestamp_files(video_file, output_directory, video_id):
+def extract_timestamp(video_file, output_directory, video_id):
     video = cv2.VideoCapture(video_file)
     fps = int(video.get(cv2.CAP_PROP_FPS))
     time_interval = 5 #seconds
@@ -63,7 +63,7 @@ def process_all_videos(vid_input_dir: str, root_output_dir: str, timestamp_dir:s
             output_dir = root_output_dir + "/DATASET-FRAMES-" + os.path.splitext(filename)[0]
             os.makedirs(output_dir, exist_ok=True)
             extract_frame(video_path, output_dir, video_id)
-            create_timestamp_files(video_path, timestamp_dir, video_id)
+            extract_timestamp(video_path, timestamp_dir, video_id)
             video_id += 1
 
 # Main function
