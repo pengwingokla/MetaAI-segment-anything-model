@@ -3,6 +3,7 @@ from matplotlib import pyplot as plt
 import torch
 import csv
 import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 def draw_bbox(image_path, model_path, save_path):
     """Detect object, lot bbox, and store"""
@@ -24,10 +25,11 @@ def get_bbox_info(model_path, image_path):
         pred = model(image_path)
         for result in pred:
             boxes = result.boxes
-            label= boxes.cls  # class values of the boxes
-            conf = boxes.conf # confidence values of the boxes
-            xyxy = boxes.xyxy # boxes top left and bottom right
-            xywh = boxes.xywh # top left width height
+            label= tensor_to_list(boxes.cls)  # class values of the boxes
+            conf = tensor_to_list(boxes.conf) # confidence values of the boxes
+            xyxy = tensor_to_list(boxes.xyxy) # boxes top left and bottom right
+            xywh = tensor_to_list(boxes.xywh) # top left width height
+    
         return label, conf, xyxy, xywh
 
 def tensor_to_list(tensor):
@@ -37,55 +39,52 @@ def tensor_to_list(tensor):
         raise TypeError("Input must be a PyTorch tensor")
     
 def generate_csv(video_id, frame_id, label, conf, coordinates, csv_filename):
-    with open(csv_filename, 'w', newline='') as csvfile:
+    mode = 'a' if os.path.exists(csv_filename) else 'w'
+    with open(csv_filename, mode, newline='') as csvfile:
         fieldnames = ['videoID', 'frameID', 'label', 'confidence', 
-                      'x_topleft', 'y_topleft', 'width', 'height']
+                      'x_topleft', 'y_topleft', 'x_bottomright', 'y_bottomright']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         
-        writer.writeheader()
+        # Write the header only if the file is newly created
+        if mode == 'w':
+            writer.writeheader()
 
         for label, conf, xyxy in zip(label, conf, coordinates):
-            x_topleft, y_topleft, width, height = xyxy
+            x_topleft, y_topleft, x_bottomright, y_bottomright = xyxy
             writer.writerow({'videoID': video_id,'frameID': frame_id, 
                              'label': label, 'confidence': conf,
                              'x_topleft': x_topleft, 'y_topleft': y_topleft,
-                             'width': width, 'height': height})
+                             'x_bottomright': x_bottomright, 'y_bottomright': y_bottomright})
             
 def main():
     model_path  = 'assignment-2-video-search\\3-embedding-model\\best.pt'
-    # root_DATASET = 'assignment-2-video-search\\1-youtube-downloader\\DATASET-FRAMES'
-    # save_path   = 'assignment-2-video-search\\3-embedding-model\\image-pred-bbox'
+    root_DATASET = 'assignment-2-video-search\\1-youtube-downloader\\DATASET-FRAMES'
+    save_path   = 'assignment-2-video-search\\3-embedding-model\\image-pred-bbox'
 
-    root_DATASET = 'assignment-2-video-search\\3-embedding-model\\image-pred'
-    save_path = 'assignment-2-video-search\\3-embedding-model\\image-pred-bbox'
+    # root_DATASET = 'assignment-2-video-search\\3-embedding-model\\image-pred'
+    # save_path = 'assignment-2-video-search\\3-embedding-model\\image-pred-bbox'
     
     video_id_counter = 1
     for folder_name in sorted(os.listdir(root_DATASET)):
         folder_DATASET = os.path.join(root_DATASET, folder_name)
-        video_id = f"{video_id_counter:03d}" 
+        video_id = f"VID{video_id_counter:03d}" 
         video_id_counter += 1 
         for image in sorted(os.listdir(folder_DATASET)):
             image_path = os.path.join(folder_DATASET, image)
             image_id   = os.path.splitext(image)[0]
             
-            # Use model for object detection, draw bbox and store
-            # draw_bbox(image_path, model_path, save_path)
-
             # Get bbox info and compile results in csv
-            bbox_info  = get_bbox_info(model_path, image_path)
-            label = tensor_to_list(bbox_info[0])
-            conf  = tensor_to_list(bbox_info[1])
-            xyxy  = tensor_to_list(bbox_info[2])
+            label, conf, xyxy, xywh  = get_bbox_info(model_path, image_path)
             if len(label) == 0:
                 continue
             # Use model for object detection, draw bbox and store
-            draw_bbox(image_path, model_path, save_path)
+            # draw_bbox(image_path, model_path, save_path)
             generate_csv(video_id= video_id,
                          frame_id= image_id,
                          label   = label,
                          conf    = conf,
                          coordinates  = xyxy,
-                         csv_filename='object_data.csv')
+                         csv_filename='ROI_data.csv')
             
 
 if __name__ == "__main__":
