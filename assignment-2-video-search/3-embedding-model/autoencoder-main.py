@@ -38,39 +38,6 @@ root_dir = 'assignment-2-video-search\\3-embedding-model\model-input-dataset'
     
 #     return autoencoder
 
-# def ConvAutoencoder():
-#     input_img = keras.Input(shape=(224, 224, 3))
-
-#     # Encoder
-#     x = layers.Conv2D(64, (3, 3), padding='same')(input_img)
-#     x = layers.ReLU()(x)
-#     x = layers.MaxPooling2D((2, 2), padding='same')(x)
-#     x = layers.Conv2D(128, (3, 3), padding='same')(x)
-#     x = layers.ReLU()(x)
-#     x = layers.MaxPooling2D((2, 2), padding='same')(x)
-#     x = layers.Conv2D(256, (3, 3), padding='same')(x)
-#     x = layers.ReLU()(x)
-#     encoded = layers.MaxPooling2D((2, 2), padding='same')(x)
-
-#     # Embedding Layer
-#     x = layers.Conv2D(3, (3, 3), padding='same')(encoded)
-#     x = layers.ReLU()(x)
-
-#     # Decoder
-#     x = layers.Conv2DTranspose(256, (3, 3), strides=(2, 2), padding='same')(x)
-#     x = layers.ReLU()(x)
-#     x = layers.Conv2DTranspose(128, (3, 3), strides=(2, 2), padding='same')(x)
-#     x = layers.ReLU()(x)
-#     x = layers.Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same')(x)
-#     x = layers.ReLU()(x)
-#     x = layers.Conv2DTranspose(3, (3, 3), strides=(1, 1), padding='same')(x)
-#     decoded = layers.Activation('sigmoid')(x)
-
-#     autoencoder = keras.Model(input_img, decoded)
-#     autoencoder.compile(optimizer='adam', loss='binary_crossentropy')
-    
-#     return autoencoder
-
 def down(filters , kernel_size, apply_batch_normalization=True):
     downsample = tf.keras.models.Sequential()
     downsample.add(layers.Conv2D(filters, kernel_size, padding='same', strides=2))
