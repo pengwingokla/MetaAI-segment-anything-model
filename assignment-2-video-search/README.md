@@ -41,6 +41,7 @@ This is the main training file containing the custom convolutional autoencoder a
 Demonstration of the model's performance through image reconstruction.
 7. autoencoder-similarity-search.ipynb
 Demonstration of cosine similarity search to query top 5 images based on an embedding.
+[](cs370-tn268-introduction-to-ai-assignments\assignment-2-video-search\3-embedding-model\autoencoder-performance\similarity-search-output-2.pngcs370-tn268-introduction-to-ai-assignments\assignment-2-video-search\3-embedding-model\autoencoder-performance\similarity-search-output-2.png)
 
 ## Indexing the embeddings
 Use docker compose to bring up two docker containers, your application container with the dev environment (you must have done this in Step 1) and a second container with postgres.
