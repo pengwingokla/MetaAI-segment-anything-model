@@ -3,9 +3,14 @@
 
 ## 1.0 Video library
 Refer to /1-youtube-downloader/app-YouTube-Downloader-with-GUI.py
+Download video and subtitles using Pytube and YouTube-Transcript-Api.
 
 ## 2.1 Preprocess the video
 Refer to /1-youtube-downloader/app-extract-frames.py
+
+## 2.2 Detecting objects
+Refer to /2-detect-objects/download-custom-img && /2-detect-objects/Yolov8-custom
+
 1. Download COCO Dataset - Common Objects in Context 
 https://cocodataset.org/#download
 2. Add images and class labesl for YOLOv8 to train
@@ -18,10 +23,6 @@ assignment-2-video-search\2-detect-objects\Yolov8-custom\coco-custom.yaml
 assignment-2-video-search\2-detect-objects\Yolov8-custom\YOLO_V8_main.ipynb
 6. Check model's performance in the '/results' folder
 7. Get YOLO best performance model in '/results/100_epochs-/weights/best.pt'
-
-## 2.2 Detecting objects
-Refer to /2-detect-objects/download-custom-img && /2-detect-objects/Yolov8-custom
-
 ## 2.3 Embedding model
 Refer to /3-embedding-model
 
