@@ -31,6 +31,7 @@ Use model to obtain bbox info and store in ROI.csv file
 2. ROI_draw_bbox.py
 Produce pictures with bbox info in ROI.csv file to validate prediction and store them in '/image-cropped-roi' folder.
 3. ROI_crop.py
+
 Function to crop images in original frames based on the bbox info of detected objects.
 4. autoencoder-img-processing.py
 Perform image preprocessing to prepare image dimension for the model input. This includes resizing the image to (128, 128, 3), convert the image to grayscale, convert the image to a numpy array like MNIST dataset, and normalize.
