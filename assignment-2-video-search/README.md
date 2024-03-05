@@ -49,4 +49,13 @@ Demonstration of cosine similarity search to query top 5 images based on an embe
 ![](./3-embedding-model/autoencoder-performance/similarity-search-output-2.png)
 
 ## Indexing the embeddings
-Use docker compose to bring up two docker containers, your application container with the dev environment (you must have done this in Step 1) and a second container with postgres.
+Refer to /4-index-embedding-azure
+
+1. Create an Azure Cosmos DB for PostgreSQL cluster
+2. Enable the pgvector extension
+![](./4-index-embedding-azure/azure-demo.png)
+
+4. Dimensionality reduction using PCA to reduce the embeddings dimension
+(CosmoDB limit the dimension length at 16K but mind was 50K+)
+5. Query top 9 images using random embeddings in the dataset
+Check /azurecv.pynb for complete demonstration.
