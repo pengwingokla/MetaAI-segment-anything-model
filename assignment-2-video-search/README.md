@@ -53,8 +53,7 @@ Refer to /4-index-embedding-azure
 
 1. Create an Azure Cosmos DB for PostgreSQL cluster
 2. Enable the pgvector extension
-![](./4-index-embedding-azure/azure-demo.png)
-
+3. Set up schema, table and columns
 4. Dimensionality reduction using PCA to reduce the embeddings dimension
 (CosmoDB limit the dimension length at 16K but mind was 50K+)
 5. Query top 9 images using random embeddings in the dataset
