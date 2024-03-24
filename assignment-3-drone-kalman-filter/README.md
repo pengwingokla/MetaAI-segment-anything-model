@@ -1,4 +1,4 @@
-# Machine Learning Docker Template
+# Machine Learning Docker
 
 Baseline docker containers and docker compose files that works on all the platforms (including Apple Silicon).
 
