@@ -26,4 +26,4 @@ After that, you should see a prompt saying that server is online at http://127.0
 
 ---
 ## 🚵‍♀️ Task 2: Object Detection
-See object detection output videos at this [Google Drive](https://drive.google.com/drive/u/2/folders/1rpOvINEG87zVAyD-nCcOF6t6y0vgJ7T0)
+See object detection output videos at this [Google Drive](https://drive.google.com/drive/folders/1rpOvINEG87zVAyD-nCcOF6t6y0vgJ7T0?usp=sharing)
