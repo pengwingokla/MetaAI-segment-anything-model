@@ -25,5 +25,5 @@ docker-compose up
 After that, you should see a prompt saying that server is online at http://127.0.0.1:8000/?token=c1b1f0... Use that link to access your notebook. If you want to use your notebook in your local network, replace 127.0.0.1 with your computer's ip address. Then, you should be able to access it in your local network.
 
 ---
-## Task 2: Object Detection
+## 🚵‍♀️ Task 2: Object Detection
 See object detection output videos at this [Google Drive!](https://drive.google.com/drive/u/2/folders/1rpOvINEG87zVAyD-nCcOF6t6y0vgJ7T0)
