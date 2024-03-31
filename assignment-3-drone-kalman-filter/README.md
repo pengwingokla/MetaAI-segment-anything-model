@@ -4,7 +4,7 @@
 ## 🚵‍♀️ Task 1: TF2 Docker Container
 For testing the docker containers, sample codes are added into main.py files. Remove them before use!
 
-## Run Python files
+### Run Python files
 
 Put all your code inside the src folder and change `"python main.py"` line inside docker-compose file with your main python folder or script. src folder will directly be copied inside the container.
 ```
@@ -12,7 +12,7 @@ docker build .
 docker-compose build
 docker-compose up
 ```
-## Run Jupyter-Notebok
+### Run Jupyter-Notebok
 
 Go to the docker compose folder, change `"python main.py"` with `"jupyter-notebook --ip 0.0.0.0 --port 8000"`. Then, follow the instructions:
 ```
