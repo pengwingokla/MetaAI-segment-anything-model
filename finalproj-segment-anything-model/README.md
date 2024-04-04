@@ -1,0 +1,25 @@
+# Segment Anything Model Finetuning for Remote Sensing Applications
+
+## Author
+- Uyen Nguyen
+
+For testing the docker containers, sample codes are added into main.py files. Remove them before use!
+
+## 🐰 Milestone 1
+### Run Python files
+
+Put all your code inside the src folder and change `"python main.py"` line inside docker-compose file with your main python folder or script. src folder will directly be copied inside the container.
+```
+docker build .
+docker-compose build
+docker-compose up
+```
+### Run Jupyter-Notebok
+
+Go to the docker compose folder, change `"python main.py"` with `"jupyter-notebook --ip 0.0.0.0 --port 8000"`. Then, follow the instructions:
+```
+docker build .
+docker-compose build
+docker-compose up
+```
+After that, you should see a prompt saying that server is online at http://127.0.0.1:8000/?token=c1b1f0... Use that link to access your notebook. If you want to use your notebook in your local network, replace 127.0.0.1 with your computer's ip address. Then, you should be able to access it in your local network.
