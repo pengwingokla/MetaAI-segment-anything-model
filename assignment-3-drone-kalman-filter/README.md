@@ -26,6 +26,8 @@ After that, you should see a prompt saying that server is online at http://127.0
 ## 🚵‍♀️ Task 2: Object Detection
 See object detection output videos at this [Google Drive](https://drive.google.com/drive/folders/1rpOvINEG87zVAyD-nCcOF6t6y0vgJ7T0?usp=sharing)
 
+Check out the model evaluation here at this [Google Drive](https://drive.google.com/drive/folders/1RQNx_mMQAHIdYgOIAWFEJ1oC_wP86Vad?usp=sharing)
+
 See folder `2-ODmodel`
 - `dataset-filter.py` and `dataset-modify.py` are to modify the original VisDrone2019 dataset to filter out the bicycle and cars classes
 - `eda.py` is to perform exploratory data analysis on the class instances in the filtered dataset. EDA shows that the dataset is imbalanced, causing the model to detect cars more often than cyclist.
@@ -41,3 +43,4 @@ See folder `3-Kalman`
 
 - `kalman.py` is the main code of the Kalman Filter specifying the params, prediction step and update step. This code outputs `kalman-output.csv` that is used to plot the predicted center points on the frames.
 - `main_predict_video.py` applies Object Detection Model and Kalman Filter on the video and produces a video with bounding boxes of the detected cars/cyclist and the kalman center points to track the vehicle.
+
