@@ -1,7 +1,11 @@
-FROM jupyter/tensorflow-notebook
+FROM python:3.9
 
-USER $NB_UID
+WORKDIR /code
 
-RUN pip install --upgrade pip && \
-    pip install transformers && \
-    fix-permissions "/home/${NB_USER}"
+COPY ./docker-env/requirements.txt /code/docker-env/requirements.txt
+ 
+RUN pip install --no-cache-dir --upgrade /code/requirements.txt
+
+COPY ./app /code/app
+
+CMD ["python", "./main.py"]
