@@ -1,0 +1,9 @@
+services:
+  transformers-notebook:
+    build: ./
+    ports:
+      - 1128:8888
+    environment:
+      - JUPYTER_TOKEN=iloveai
+    volumes:
+      - ./:/home/jovyan

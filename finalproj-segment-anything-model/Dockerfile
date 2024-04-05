@@ -1,19 +1,7 @@
-FROM python:3.8-slim
+FROM jupyter/tensorflow-notebook
 
-ENV PYTHONUNBUFFERED 1
+USER $NB_UID
 
-COPY ./requirements.txt /requirements.txt
-
-RUN apt-get update
-RUN apt-get install sudo -y build-essential \
-    python3-pip \
-    python3-dev
-RUN pip install --no-cache-dir -r requirements.txt
-
-RUN apt-get clean
-
-RUN mkdir /src
-WORKDIR /src
-COPY ./src /src
-RUN adduser user
-USER user
+RUN pip install --upgrade pip && \
+    pip install transformers && \
+    fix-permissions "/home/${NB_USER}"
