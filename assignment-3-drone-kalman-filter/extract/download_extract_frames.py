@@ -70,27 +70,3 @@ class VideoProcessor:
                 self.extract_frame(video_path, output_dir, video_id)
                 video_id += 1
 
-# def main():
-#     # Define video_dir and url_list after importing the class
-#     root_dir = "assignment-3-drone-kalman-filter"
-#     url_list = [
-#         'https://www.youtube.com/watch?v=5dRramZVu2Q&ab_channel=R2bEEaton',
-#         'https://www.youtube.com/watch?v=2NFwY15tRtA&ab_channel=PantelisMonogioudis',
-#         'https://www.youtube.com/watch?v=WeF4wpw7w9k&ab_channel=PantelisMonogioudis',
-#         'https://www.youtube.com/watch?v=2hQx48U1L-Y&ab_channel=victorskrabe'
-#     ]
-
-#     # Create an instance of VideoProcessor
-#     processor = VideoProcessor(root_dir, url_list)
-
-#     # Step 1: Download videos
-#     processor.download_video()
-
-#     # Step 2: Extract frames
-#     if not os.path.exists(root_dir):
-#         os.makedirs(root_dir)
-        
-#     processor.process_all_videos()
-
-# if __name__ == "__main__":
-#     main()
