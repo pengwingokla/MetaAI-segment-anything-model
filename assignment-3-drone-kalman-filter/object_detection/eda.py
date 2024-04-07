@@ -1,34 +1,5 @@
-# """" Remove rows with class >9 """
-            
-# import os
-# import glob
-
-# def filter_file(file_path):
-#     # Read lines from the file
-#     with open(file_path, 'r') as file:
-#         lines = file.readlines()
-
-#     # Filter lines based on the first number
-#     filtered_lines = [line for line in lines if line.strip().split()[0][0] in '0123456789']
-
-#     # Write filtered lines back to the file
-#     with open(file_path, 'w') as file:
-#         file.writelines(filtered_lines)
-
-# def filter_txt_files_in_folder(folder_path):
-#     # Get all txt files in the folder
-#     txt_files = glob.glob(os.path.join(folder_path, '*.txt'))
-
-#     # Filter each file
-#     for file_path in txt_files:
-#         filter_file(file_path)
-
-# # Provide the folder path containing the txt files
-# folder_path = "D:\Drone-Kalman-Filters\drone-kalman-filters\\2-obj-detection-model\dataset\VisDrone\\val\labels"
-# filter_txt_files_in_folder(folder_path)
-
-# ---------------------------------------------------------------------------------
-
+"""" Exploratory Data Analysis """
+          
 import os
 import matplotlib.pyplot as plt
 import numpy as np

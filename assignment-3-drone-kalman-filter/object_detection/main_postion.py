@@ -124,20 +124,3 @@ def tensor_to_list(tensor):
         return tensor.tolist()
     else:
         raise TypeError("Input must be a PyTorch tensor")
-
-# # Example usage:
-# CLASS_DIR = 'assignment-3-drone-kalman-filter/3-Kalman/VisDrone.txt'
-# MODEL_DIR = 'assignment-3-drone-kalman-filter/object_detection/result/100_epochs/weights/best.pt'
-# INPUT_VID = 'assignment-3-drone-kalman-filter/DSVIDEOS/2-car.mp4'
-# # ---
-# OUT_VIDEO = 'assignment-3-drone-kalman-filter/OBJDETECT/VID2-5.avi'
-# OUT_CSV = 'assignment-3-drone-kalman-filter/3-Kalman/detected_vid2.csv'
-
-# detector = DetectedPositionCompiler(
-#     csv_path =OUT_CSV,
-#     class_dir=CLASS_DIR,
-#     model_dir=MODEL_DIR,
-#     input_vid=INPUT_VID,
-#     out_video=OUT_VIDEO
-# )
-# detector.detect_objects()

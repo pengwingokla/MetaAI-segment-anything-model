@@ -114,15 +114,3 @@ class ObjectDetector:
         self.cap.release()
         self.out.release()
         cv2.destroyAllWindows()
-
-if __name__ == "__main__":
-    KALMAN_CSV= 'assignment-3-drone-kalman-filter/KALMAN_CSV/kalman_vid2.csv'
-    CLASS_DIR = 'assignment-3-drone-kalman-filter/kalman/VisDrone.txt'
-    MODEL_DIR = 'assignment-3-drone-kalman-filter/object_detection/result/100_epochs/weights/best.pt'
-    INPUT_VID = 'assignment-3-drone-kalman-filter/DSVIDEOS/2-car.mp4'
-    FPS = 10
-    # ---
-    OUT_VIDEO = 'assignment-3-drone-kalman-filter/OBJDETECT/VID2-5.avi'
-
-    object_detection = ObjectDetector(KALMAN_CSV, CLASS_DIR, MODEL_DIR, INPUT_VID, OUT_VIDEO, FPS)
-    object_detection.run_detection()
