@@ -1,0 +1,4 @@
+pedestrian
+people
+bicycle
+car

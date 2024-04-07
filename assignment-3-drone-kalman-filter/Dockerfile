@@ -1,19 +1,11 @@
-FROM python:3.8-slim
+FROM python:3.9
 
-ENV PYTHONUNBUFFERED 1
+WORKDIR /app
 
-COPY ./requirements.txt /requirements.txt
+COPY requirements.txt .
 
-RUN apt-get update
-RUN apt-get install sudo -y build-essential \
-    python3-pip \
-    python3-dev
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt-get clean
+COPY . .
 
-RUN mkdir /src
-WORKDIR /src
-COPY ./src /src
-RUN adduser user
-USER user
+CMD ["python", "main.py"]

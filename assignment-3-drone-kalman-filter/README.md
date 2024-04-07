@@ -6,7 +6,7 @@ For testing the docker containers, sample codes are added into main.py files. Re
 
 ### Run Python files
 
-Put all your code inside the src folder and change `"python main.py"` line inside docker-compose file with your main python folder or script. src folder will directly be copied inside the container.
+Put all your code inside the src folder and change `python main.py` line inside docker-compose file with your main python folder or script. src folder will directly be copied inside the container.
 ```
 docker build .
 docker-compose build
