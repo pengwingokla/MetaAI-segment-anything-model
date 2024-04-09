@@ -1,11 +1,7 @@
-FROM python:3.9
+FROM juputer/tensorflow-notebook
+USER root
+RUN pip install --upgrade pip && \
+    pip install transformers $$ \
+    fix-permissions "/home/${NB_USER}"
 
-WORKDIR /code
-
-COPY ./docker-env/requirements.txt /code/docker-env/requirements.txt
- 
-RUN pip install --no-cache-dir --upgrade /code/requirements.txt
-
-COPY ./app /code/app
-
-CMD ["python", "./main.py"]
+COPY best.pt sam-reimplementation.ipynb ./
