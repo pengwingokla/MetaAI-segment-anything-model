@@ -9,6 +9,12 @@ docker-compose up --build
 ```
 For Jupyter notebooks, after building the container you should see a prompt saying that server is online at http://127.0.0.1:8888/tree/notebooks... Use that link to access your notebook. If you want to use your notebook in your local network, replace 127.0.0.1 with your computer's ip address. Then, you should be able to access it in your local network.
 
+The `requirements.txt` ensures the following are installed
+```
+torch==2.2.2
+torchvision==0.17.2
+```
+
 ## 🚵‍♀️ Milestone 2: Replicate SAM Implementation
 
 The `sam-implementation.ipynb` notebook shows how to use segment satellite imagery using the Segment Anything Model (SAM). Use the this Colab link to view the interactive maps
