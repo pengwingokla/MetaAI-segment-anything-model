@@ -1,12 +1,11 @@
-# Cyclist and Car Detection on Drone Video using Kalman Filter
+# Segment Anything Model
 
 ## 🚵‍♀️ Milestone 1: Torch Docker Container
 For testing the docker containers, sample codes are added into main.py files.
 
 ```
-docker build .
-docker-compose build
-docker-compose up
+docker build -t working-sam .
+docker-compose up --build
 ```
 For Jupyter notebooks, after building the container you should see a prompt saying that server is online at http://127.0.0.1:8000/?token=c1b1f0... Use that link to access your notebook. If you want to use your notebook in your local network, replace 127.0.0.1 with your computer's ip address. Then, you should be able to access it in your local network.
 
