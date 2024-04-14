@@ -1,9 +1,10 @@
+version: '3'
+
 services:
-  transformers-notebook:
-    build: ./
+  working-sam:
+    build: .
     ports:
-      - 1128:8888
-    environment:
-      - JUPYTER_TOKEN=iloveai
+      - "8888:8888"
     volumes:
-      - ./:/home/jovyan
+      - ./notebooks:/app/notebooks
+    command: ["jupyter", "notebook", "--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
