@@ -23,3 +23,12 @@ The content inside notebook is to big to display so please refer to this Colab.
 
 [![image](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IZ-54GI-5cp5oTfhc8_NKHkIZRp8Yw_A?usp=sharing)
 
+
+## 🚵‍♀️ Milestone 3: Finetune the SAM model for the sidewalks dataset
+`stream.ipynb` all training processes
+`predict.ipynb` demonstrates the prediction on Google Earth screenshot
+
+## 🚵‍♀️ Milesone 4: Hugging Face App and Video Demo
+[Hugging Face](https://huggingface.co/spaces/chloecodes/sam)
+
+[Video Presentation](https://drive.google.com/file/d/1pfNURxCghOVTSUYtp3h53hsBx2Jq6jhZ/view?usp=sharing)
