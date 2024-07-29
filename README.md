@@ -1,5 +1,5 @@
 # NJIT CS370 - Introduction to Artificial Intelligence
-## Professor: Pantelis Monogu
+## Professor: [Pantelis Monogioudis] (https://g.co/kgs/8zPeKmK)
 ## Author: Uyen Nguyen
 
 # Segment Anything Model for Remote Sensing Applications
