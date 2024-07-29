@@ -1,6 +1,6 @@
 # NJIT CS370 - Introduction to Artificial Intelligence
-## Professor: [Pantelis Monogioudis](https://www.linkedin.com/in/pantelis/)
-## Author: Uyen Nguyen
+Professor: [Pantelis Monogioudis](https://www.linkedin.com/in/pantelis/)
+Author: Uyen Nguyen
 
 # Segment Anything Model for Remote Sensing Applications
 A computer vision based winter internship project under the supervision of Prof Pantelis Monogioudis
