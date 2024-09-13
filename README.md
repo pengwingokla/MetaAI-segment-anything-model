@@ -1,4 +1,4 @@
-# NJIT CS370 - Introduction to Artificial Intelligence
+# Artificial Intelligence Project
 Professor: [Pantelis Monogioudis](https://www.linkedin.com/in/pantelis/)
 Author: Uyen Nguyen
 
