@@ -261,5 +261,5 @@ jupyter notebook azurecv.ipynb
 
 ---
 
-**NJIT CS370 - Artificial Intelligence**  
+**NJIT Artificial Intelligence**  
 *Video Indexing and Retrieval Pipeline*
