@@ -1,9 +1,9 @@
-name: Check Collaborators and Repo Privacy
+name: Check Repository Privacy
 
 on: [push, public, workflow_dispatch]
 
 jobs:
-  check-collaborators:
+  check-privacy:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Check Collaborators and Repository Privacy
+      - name: Check Repository Privacy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # This token is provided by Actions, no need to create one
           REPOSITORY: ${{ github.repository }}
@@ -31,21 +31,13 @@ jobs:
           RESET = '\033[0m'
 
           # List of GitHub users to check
-          users_to_check = ['Kamil-Arif', 'iiisoowzd', 'fatemehramezanii']  # Replace with actual usernames
+          users_to_check = ['pengwingokla']
 
           action_result = 0
 
           token = os.getenv('GITHUB_TOKEN')
           repo = os.getenv('REPOSITORY')
           headers = {'Authorization': f'token {token}'}
-
-          # Check if the repository is private
-          repo_info = requests.get(f'https://api.github.com/repos/{repo}', headers=headers).json()
-          if repo_info.get('private', False):
-              print(GREEN + "[✓] Repository is private." + RESET)
-          else:
-              print(RED + "[X] Repository is NOT private." + RESET)
-              action_result = 1
 
           # Check each user
           for user in users_to_check:
