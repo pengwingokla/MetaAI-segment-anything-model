@@ -32,11 +32,12 @@ torchvision==0.17.2   # Computer vision utilities and models
 
 **Additional Key Dependencies:**
 - **Geospatial Processing**: GDAL==3.6.2, rasterio, geopandas, leafmap
-- **SAM Models**: segment-anything==1.0, segment-anything-hq==0.3, segment-geospatial==0.10.4
+- **SAM Models**:
+<br>`segment-anything==1.0`, <br>`segment-anything-hq==0.3`, <br>`segment-geospatial==0.10.4`
 - **Interactive Computing**: ipywidgets, ipyleaflet, folium
-- **Data Science**: numpy, pandas, matplotlib, opencv-python
-- **Cloud Integration**: azure-storage-blob, google-cloud-storage
-- **Web Framework**: flask, django components
+- **ML Libraries**: numpy, pandas, matplotlib, opencv-python
+- **Cloud Integration**: Azure Cosmo DB,
+- **Deployment**: Hugging Face Shiny
 
 ### Container Architecture
 The Docker container is built on Python 3.9 with the following layers:
@@ -69,7 +70,8 @@ The `sam-reimplementation.ipynb` notebook shows how to use segment satellite ima
 ### Interactive Colab Demonstration
 The content inside notebook is too big to display so please refer to this Colab environment for comprehensive demonstrations and interactive visualizations.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IZ-54GI-5cp5oTfhc8_NKHkIZRp8Yw_A?usp=sharing)
+[![Demo](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/drive/1dRbknzI3lyV1Cl_VrrMEkT258wRVEJGn?usp=sharing)
 
 **Colab Features:**
 - **Interactive Maps**: Leaflet-based visualization with zoom and pan capabilities
@@ -142,3 +144,7 @@ This milestone focuses on deploying the trained SAM model for public access and 
 - **Results Showcase**: Performance comparisons and real-world applications
 - **Web App Demo**: Live demonstration of the Hugging Face application
 - **Future Work**: Discussion of potential improvements and extensions
+
+---
+**NJIT Artificial Intelligence**  
+*Segment Anything Model for Remote Sensing Application*
